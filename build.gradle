@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '15'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	//implementation group: 'com.google.cloud', name: 'spring-cloud-gcp-dependencies', version: '2.0.2'
+	//implementation group: 'org.springframework.cloud', name: 'spring-cloud-gcp-starter-vision'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-gcp-dependencies', version: '1.2.8.RELEASE', ext: 'pom'
+	implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.5.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
